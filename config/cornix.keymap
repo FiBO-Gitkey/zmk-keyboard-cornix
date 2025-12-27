@@ -210,10 +210,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans          &trans  &trans  &trans  &trans  &trans                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans          &trans  &trans  &trans  &trans  &trans                  &kp EQUAL     &kp SQT       &trans        &trans        &trans        &trans
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans
-&trans          &trans  &trans  &trans  &trans  &mo 1                   &trans        &trans        &trans        &trans        &trans        &trans
+&kp LC(LA(DELETE))  &trans     &trans     &trans     &trans     &kp LG(LS(S))                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&trans              &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans                         &kp EQUAL     &kp SQT       &trans        &trans        &trans        &trans
+&kp LEFT_SHIFT      &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans         &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans
+&trans              &trans     &trans     &trans     &trans     &mo 1                          &trans        &trans        &trans        &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
