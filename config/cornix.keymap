@@ -251,10 +251,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &kp TAB               &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp BACKSPACE
-&none  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                  &kp LEFT_PARENTHESIS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp RIGHT_PARENTHESIS
-&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp EQUAL             &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &kp SLASH
-&none  &none    &none    &mo 3    &trans   &trans                   &kp BACKSPACE         &kp ENTER     &kp DELETE    &kp NUMBER_0  &kp NUMBER_0  &kp ENTER
+&none  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &kp TAB               &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK  &kp BACKSPACE
+&none  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                  &kp LEFT_PARENTHESIS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &kp RIGHT_PARENTHESIS
+&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp EQUAL             &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp SLASH
+&none  &none    &none    &mo 3    &trans   &trans                   &kp BACKSPACE         &kp ENTER        &kp DELETE       &kp KP_N0        &kp DOT       &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
