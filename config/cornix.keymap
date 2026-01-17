@@ -188,7 +188,17 @@
 
         imput_parenthesis {
             bindings = <&imput_parenthesis>;
-            key-positions = <9 10>;
+            key-positions = <20 21>;
+        };
+
+        imput_braces {
+            bindings = <&imput_braces>;
+            key-positions = <8 9>;
+        };
+
+        imput_brackets {
+            bindings = <&imput_brackets>;
+            key-positions = <34 35>;
         };
     };
 
@@ -215,6 +225,20 @@
 
             label = "MACMODE";
         };
+
+        imput_braces: imput_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            label = "IMPUT_BRACKETS";
+        };
+
+        imput_brackets: imput_sqbrackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            label = "IMPUT_SQBRACKETS";
+        };
     };
 
     keymap {
@@ -231,10 +255,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE        &kp Q          &kp W         &kp E         &kp R                &kp T                          &kp Y           &kp U                &kp I          &kp O         &kp P             &lt 6 MINUS
-&mt CAPSLOCK TAB  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F  &kp G                          &kp H           &hm_shift_r RSHFT J  &hm_r RGUI K   &hm_r RALT L  &hm_r RCTRL SEMI  &kp SLASH
-&kp LEFT_SHIFT    &hm_l LGUI Z   &kp X         &kp C         &kp V                &kp B      &WinMode  &MacMode  &kp N           &kp M                &kp COMMA      &kp DOT       &kp UP            &mt RIGHT_SHIFT BACKSLASH
-&kp LCTRL         &kp LEFT_WIN   &kp LEFT_ALT  &mo 5         &kp SPACE            &kp SPACE                      &kp LANG_HANJA  &kp ENTER            &kp BACKSPACE  &kp LEFT      &kp DOWN          &kp RIGHT
+&mt ESCAPE TAB  &kp Q         &kp W         &kp E  &kp R      &kp T                               &kp Y           &kp U      &kp I          &kp O     &kp P          &lt 6 MINUS
+&kp CAPSLOCK    &kp A         &kp S         &kp D  &kp F      &kp G                               &kp H           &kp J      &kp K          &kp L     &kp SEMICOLON  &kp SLASH
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C  &kp V      &kp B           &WinMode  &MacMode  &kp N           &kp M      &kp COMMA      &kp DOT   &kp UP         &mt RIGHT_SHIFT BACKSLASH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &mo 5  &kp SPACE  &kp LANGUAGE_1                      &kp LANG_HANJA  &kp ENTER  &kp BACKSPACE  &kp LEFT  &kp DOWN       &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -242,10 +266,10 @@
 
         WindowsMode {
             bindings = <
-&trans  &trans       &trans       &trans       &trans       &trans                              &trans          &trans  &trans  &trans  &mt RC(P) P  &trans
-&trans  &mt LC(A) A  &mt LC(S) S  &mt LC(D) D  &mt LC(F) F  &trans                              &trans          &trans  &trans  &trans  &trans       &trans
-&trans  &mt LC(Z) Z  &mt LC(X) X  &mt LC(C) C  &mt LC(V) V  &trans              &trans  &trans  &trans          &trans  &trans  &trans  &trans       &trans
-&trans  &trans       &trans       &trans       &trans       &lt 2 LS(CAPSLOCK)                  &kp LANG_HANJA  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 2 LS(CAPSLOCK)                  &lt 2 LS(CAPSLOCK)  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -271,10 +295,10 @@
 
         MacMode {
             bindings = <
-&trans  &trans       &trans       &trans       &trans       &trans                          &trans          &trans  &trans  &trans  &mt RG(P) P  &trans
-&trans  &mt LG(A) A  &mt LG(S) S  &mt LG(D) D  &mt LG(F) F  &trans                          &trans          &trans  &trans  &trans  &trans       &trans
-&trans  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &trans          &trans  &trans  &trans          &trans  &trans  &trans  &trans       &trans
-&trans  &trans       &trans       &trans       &trans       &lt 4 CAPSLOCK                  &kp LANGUAGE_2  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans            &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans            &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 4 CAPSLOCK                  &lt 4 LANG_HANJA  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -313,7 +337,7 @@
 &none  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &kp TAB               &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MULTIPLY  &kp BACKSPACE
 &none  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                  &kp LEFT_PARENTHESIS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS     &kp RIGHT_PARENTHESIS
 &none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp EQUAL             &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS      &kp KP_DIVIDE
-&none  &none    &none    &mo 5    &trans   &trans                   &kp DELETE            &trans           &trans           &kp KP_N0        &kp KP_DOT       &kp ENTER
+&none  &none    &none    &mo 5    &trans   &trans                   &trans                &trans           &kp DELETE       &kp KP_N0        &kp KP_DOT       &kp ENTER
             >;
 
             sensor-bindings =
